@@ -4,8 +4,8 @@
   "description": "experimenting with vuepress and GitHub Pages including a circle CI pipeline",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vuepress dev",
+    "docs:build": "vuepress build"
   },
   "repository": {
     "type": "git",
