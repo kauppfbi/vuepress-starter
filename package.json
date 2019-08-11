@@ -4,7 +4,8 @@
   "description": "experimenting with vuepress and GitHub Pages including a circle CI pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/kauppfbi/vuepress-starter/issues"
   },
-  "homepage": "https://github.com/kauppfbi/vuepress-starter#readme"
+  "homepage": "https://github.com/kauppfbi/vuepress-starter#readme",
+  "devDependencies": {
+    "vuepress": "^1.0.3"
+  }
 }
