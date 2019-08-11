@@ -31,9 +31,10 @@ jobs:
 
   deploy:
     executor: node-executor
-    branches:
-      only:
-        - master
+    filters:
+      branches:
+        only:
+          - master
 
     steps:
       - checkout
