@@ -72,9 +72,9 @@ workflows:
       - deploy:
           requires:
             - build:
-                filters:
-                  branches:
-                    ignore:
-                      - gh-pages
-                    only:
-                      - master
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+              only:
+                - master
