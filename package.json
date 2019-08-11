@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/kauppfbi/vuepress-starter#readme",
   "devDependencies": {
-    "vuepress": "^1.0.3"
+    "vuepress": "1.0.3"
   }
 }
