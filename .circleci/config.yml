@@ -7,6 +7,10 @@ defaults: &defaults
 jobs:
   build:
     <<: *defaults
+    filters:
+      branches:
+        ignore:
+          - gh-pages
     steps:
       - checkout
 
@@ -17,7 +21,9 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies
 
-      - run: npm install
+      - run:
+          name: Install Dependencies
+          command: npm install
 
       - save_cache:
           paths:
@@ -25,11 +31,13 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # build docs
-      - run: npm run docs:build
+      - run:
+          name: Build Docs with VuePress
+          command: npm run docs:build
 
       - save_cache:
           paths:
-            - docs
+            - docs-{{ .Branch }}
           key: docs
 
   deploy:
@@ -38,6 +46,8 @@ jobs:
       branches:
         only:
           - master
+        ignore:
+          - gh-pages
 
     steps:
       - checkout
@@ -52,10 +62,12 @@ jobs:
       # Download cached docs
       - restore_cache:
           keys:
-            - docs
+            - docs-{{ .Branch }}
 
       # deploy docs
-      - run: npm run docs:deploy
+      - run:
+          name: Deploy Docs to GitHub Pages
+          command: npm run docs:deploy
 
 workflows:
   version: 2
