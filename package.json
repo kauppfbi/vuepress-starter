@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/kauppfbi/vuepress-starter#readme",
   "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "prettier": "^1.18.2",
     "vuepress": "1.0.3"
   }
 }
