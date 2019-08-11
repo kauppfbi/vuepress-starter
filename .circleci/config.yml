@@ -42,12 +42,16 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
+      # Download cached dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies
+
+      # Download cached docs
+      - restore_cache:
+          keys:
             - docs
 
       # deploy docs
