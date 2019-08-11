@@ -37,8 +37,9 @@ jobs:
 
       - save_cache:
           paths:
-            - docs-{{ .Branch }}
-          key: docs
+            - docs
+          key: docs-{{ .Branch }}
+          when: always
 
   deploy:
     <<: *defaults
