@@ -27,6 +27,11 @@ jobs:
       # build docs
       - run: npm run docs:build
 
+      - save_cache:
+          paths:
+            - docs
+          key: docs
+
   deploy:
     <<: *defaults
     filters:
@@ -43,9 +48,10 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies
+            - docs
 
       # deploy docs
-      - run: echo hello
+      - run: npm run docs:deploy
 
 workflows:
   version: 2
