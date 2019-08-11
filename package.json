@@ -1,0 +1,24 @@
+{
+  "name": "vuepress-starter",
+  "version": "0.0.1",
+  "description": "experimenting with vuepress and GitHub Pages including a circle CI pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kauppfbi/vuepress-starter.git"
+  },
+  "keywords": [
+    "vuepress",
+    "github-pages",
+    "circle-ci"
+  ],
+  "author": "kauppfbi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kauppfbi/vuepress-starter/issues"
+  },
+  "homepage": "https://github.com/kauppfbi/vuepress-starter#readme"
+}
