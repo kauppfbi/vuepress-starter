@@ -29,6 +29,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # build docs
-      - build_docs: npm run docs:build
+      - run: npm run docs:build
 
-      - deploy_docs: npm run docs:deploy
+      # deploy docs
+      - run: npm run docs:deploy
